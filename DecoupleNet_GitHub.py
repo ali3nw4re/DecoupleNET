@@ -109,7 +109,7 @@ def gen_FID():
     return minuk_gen_FID()
 
 new_model = False
-pre_trained_model = "Desktop/UCL/Y4/Python/Decoupling/saved_model/DecoupleNet_25k.keras"
+pre_trained_model = "saved_model/DecoupleNet_25k.keras"
 training_q = input("Do you want to train a new model? Y/N ")
 
 if training_q in ["Y", "y", "yes", "Yes", "YES"]:
@@ -249,7 +249,7 @@ print("")
 if new_model == True:
     save_q = input("Do you want to save the model? Y/N ")
     if save_q in ["Y", "y", "yes", "Yes", "YES"]:
-        model_name = "Desktop/UCL/Y4/Python/Decoupling/saved_model/DecoupleNet_" + str(int(number_of_spectra/1000)) + "k.keras"
+        model_name = "saved_model/DecoupleNet_" + str(int(number_of_spectra/1000)) + "k.keras"
         directory = os.path.dirname(model_name)
         os.makedirs(directory, exist_ok=True)
         model.save(model_name)
